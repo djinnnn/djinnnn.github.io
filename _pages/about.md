@@ -32,7 +32,13 @@ Please feel free to contact me if you are interested in relevant research or wou
 <div class="publications">
 {% for p in site.data.publications %}
   <div class="publication-item">
-    <div class="publication-title">{{ p.title }}</div>
+    <div class="publication-header">
+      <div class="publication-title">{{ p.title }}</div>
+      <div class="publication-meta-tag">
+        {% if p.venue %}{{ p.venue }}{% endif %}
+        {% if p.year %}<span class="publication-year">{{ p.year }}</span>{% endif %}
+      </div>
+    </div>
     <div class="publication-authors">
       {% assign authors_parts = p.authors | split: ' and ' %}
       {% for author in authors_parts %}
@@ -42,9 +48,7 @@ Please feel free to contact me if you are interested in relevant research or wou
           {{ author | strip }}{% if forloop.last %}{% else %}, {% endif %}
         {% endif %}
       {% endfor %}
-    </div>
-    <div class="publication-venue">
-      {% if p.venue %}{{ p.venue }}{% endif %}{% if p.year %}, {{ p.year }}{% endif %}{% if p.url %} — <a href="{{ p.url }}">Link</a>{% endif %}
+      {% if p.url %}<a href="{{ p.url }}" class="publication-link">Link</a>{% endif %}
     </div>
   </div>
 {% endfor %}

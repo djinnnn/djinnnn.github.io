@@ -419,7 +419,7 @@
 }
 
 .publication-item {
-  margin-bottom: 1.5em;
+  margin-bottom: 2em;
   padding-bottom: 1.5em;
   border-bottom: 1px solid #e8e8e8;
 
@@ -430,32 +430,83 @@
   }
 }
 
+.publication-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.8em;
+  gap: 1em;
+}
+
 .publication-title {
   font-size: $type-size-4;
   font-weight: bold;
-  color: #5b99d6;
-  margin-bottom: 0.5em;
+  color: #2c3e50;
   line-height: 1.4;
+  flex: 1;
+}
+
+.publication-meta-tag {
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  padding: 0.6em 1.2em;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: $type-size-6;
+  white-space: nowrap;
+  text-align: center;
+  min-width: 150px;
+}
+
+.publication-meta-tag::before {
+  content: attr(data-venue);
+  background-color: #3498db;
+  padding: 0.3em 0.8em;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-bottom: 0.3em;
+}
+
+/* Create tag for venue */
+.publication-meta-tag {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 0.5em 1em;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.publication-year {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 0.2em 0.5em;
+  border-radius: 3px;
+  margin-top: 0.3em;
+  font-size: $type-size-7;
 }
 
 .publication-authors {
   font-size: $type-size-5;
-  margin-bottom: 0.3em;
-  color: #333;
-}
+  color: #555;
+  line-height: 1.6;
 
-.publication-venue {
-  font-size: $type-size-5;
-  color: #666;
-  font-style: italic;
+  strong {
+    color: #2c3e50;
+    font-weight: 600;
+  }
 
-  a {
-    color: #5b99d6;
+  a.publication-link {
+    margin-left: 0.5em;
+    color: #3498db;
     text-decoration: none;
+    font-weight: 500;
+    padding: 0.2em 0.5em;
+    background-color: #ecf0f1;
+    border-radius: 3px;
+    font-size: $type-size-6;
 
     &:hover {
-      text-decoration: underline;
+      background-color: #3498db;
+      color: #fff;
     }
   }
 }
-
