@@ -18,9 +18,9 @@ redirect_from:
 <span class='anchor' id='about-me'></span>
 
 # Yue Wu (吴越)
-I am a Ph.D. student in the Institute of Network Science and Cyberspace at Tsinghua University, advised by [Prof. Jiahai Yang](https://nmgroup.tsinghua.edu.cn/yjh/).  Before that I got my B.E. degree from University of Electronic Science and Technology of China.
+I am a Ph.D. student in the Institute of Network Science and Cyberspace at Tsinghua University, advised by [Prof. Jiahai Yang](https://nmgroup.tsinghua.edu.cn/yjh/).  Before that I received my B.E. degree in Software Engineering (Cyber Security) from the University of Electronic Science and Technology of China (UESTC).
 
-My research interests lie in Cyberspace Security, including 
+My research interests lie in System and Network Security, specifically in automated vulnerability discovery and large-scale security measurement. I am also actively pursuing research in LLM4Sec.
 
 Please feel free to contact me if you are interested in relevant research or would like to discuss potential collaborations!
 
@@ -29,22 +29,26 @@ Please feel free to contact me if you are interested in relevant research or wou
 # Publications
 
 {% if site.data.publications and site.data.publications.size > 0 %}
-<ul class="publications">
+<div class="publications">
 {% for p in site.data.publications %}
-  <li>
-    <strong>{{ p.year }}</strong> — {{ p.title }}. 
-    {% assign authors_parts = p.authors | split: ' and ' %}
-    {% for author in authors_parts %}
-      {% if author contains 'Wu' %}
-        <strong>{{ author | strip }}</strong>{% if forloop.last %}.{% else %} and {% endif %}
-      {% else %}
-        {{ author | strip }}{% if forloop.last %}.{% else %} and {% endif %}
-      {% endif %}
-    {% endfor %}
-    {% if p.venue %}. <em>{{ p.venue }}</em>{% endif %}{% if p.url %}. <a href="{{ p.url }}">Link</a>{% endif %}
-  </li>
+  <div class="publication-item">
+    <div class="publication-title">{{ p.title }}</div>
+    <div class="publication-authors">
+      {% assign authors_parts = p.authors | split: ' and ' %}
+      {% for author in authors_parts %}
+        {% if author contains 'Wu' %}
+          <strong>{{ author | strip }}</strong>{% if forloop.last %}{% else %}, {% endif %}
+        {% else %}
+          {{ author | strip }}{% if forloop.last %}{% else %}, {% endif %}
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="publication-venue">
+      {% if p.venue %}{{ p.venue }}{% endif %}{% if p.year %}, {{ p.year }}{% endif %}{% if p.url %} — <a href="{{ p.url }}">Link</a>{% endif %}
+    </div>
+  </div>
 {% endfor %}
-</ul>
+</div>
 {% else %}
 Please add a `publications.bib` and run the conversion script to populate publications, or add entries to `_data/publications.yml`.
 {% endif %}

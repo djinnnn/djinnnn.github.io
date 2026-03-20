@@ -410,3 +410,52 @@
   font-size: $type-size-6;
   text-transform: uppercase;
 }
+
+/* Publications Styles */
+.publications {
+  list-style: none;
+  padding: 0;
+  margin: 1em 0;
+}
+
+.publication-item {
+  margin-bottom: 1.5em;
+  padding-bottom: 1.5em;
+  border-bottom: 1px solid #e8e8e8;
+
+  &:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+.publication-title {
+  font-size: $type-size-4;
+  font-weight: bold;
+  color: #5b99d6;
+  margin-bottom: 0.5em;
+  line-height: 1.4;
+}
+
+.publication-authors {
+  font-size: $type-size-5;
+  margin-bottom: 0.3em;
+  color: #333;
+}
+
+.publication-venue {
+  font-size: $type-size-5;
+  color: #666;
+  font-style: italic;
+
+  a {
+    color: #5b99d6;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
