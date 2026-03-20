@@ -20,7 +20,7 @@ redirect_from:
 # Yue Wu (吴越)
 I am a Ph.D. student in the Institute of Network Science and Cyberspace at Tsinghua University, advised by [Prof. Jiahai Yang](https://nmgroup.tsinghua.edu.cn/yjh/).  Before that I got my B.E. degree from University of Electronic Science and Technology of China.
 
-My research interests lie in Cyberspace Security, with a focus on building automated vulnerability detection systems (Fuzzing) and conducting large-scale DNS Security Measurement.
+My research interests lie in Cyberspace Security, including 
 
 Please feel free to contact me if you are interested in relevant research or would like to discuss potential collaborations!
 
@@ -32,7 +32,16 @@ Please feel free to contact me if you are interested in relevant research or wou
 <ul class="publications">
 {% for p in site.data.publications %}
   <li>
-    <strong>{{ p.year }}</strong> — {{ p.title }}. {{ p.authors }}{% if p.venue %}. <em>{{ p.venue }}</em>{% endif %}{% if p.url %} — <a href="{{ p.url }}">PDF</a>{% endif %}
+    <strong>{{ p.year }}</strong> — {{ p.title }}. 
+    {% assign authors_parts = p.authors | split: ' and ' %}
+    {% for author in authors_parts %}
+      {% if author contains 'Wu' %}
+        <strong>{{ author | strip }}</strong>{% if forloop.last %}.{% else %} and {% endif %}
+      {% else %}
+        {{ author | strip }}{% if forloop.last %}.{% else %} and {% endif %}
+      {% endif %}
+    {% endfor %}
+    {% if p.venue %}. <em>{{ p.venue }}</em>{% endif %}{% if p.url %}. <a href="{{ p.url }}">Link</a>{% endif %}
   </li>
 {% endfor %}
 </ul>

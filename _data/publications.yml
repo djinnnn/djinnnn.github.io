@@ -1,3 +1,9 @@
+- key: rtfuzz2024
+  title: RTFuzz - Fuzzing Browsers via Efficient Render Tree Mutation
+  authors: Y Zeng and Y Wu and X Lu and C Zhang
+  year: '2024'
+  venue: Computers & Security
+  url: https://doi.org/10.1016/j.cose.2024
 - key: sample2023
   title: A Sample Conference Paper
   authors: Alice A. and Bob B. and Carol C.
