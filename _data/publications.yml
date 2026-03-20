@@ -1,0 +1,12 @@
+- key: sample2023
+  title: A Sample Conference Paper
+  authors: Alice A. and Bob B. and Carol C.
+  year: '2023'
+  venue: Proceedings of SampleConf
+  url: https://example.com/sample2023.pdf
+- key: sample2021
+  title: An Earlier Journal Article
+  authors: Doe, John and Smith, Jane
+  year: '2021'
+  venue: Journal of Examples
+  url: 10.1234/example.2021
