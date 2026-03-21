@@ -1,3 +1,8 @@
+- key: doq2025
+  title: Post-Standardization Analysis of DoQ - Deployment, Certificates Ecosystem and Implementation
+  authors: Y Wu and C Li and W Dong and C Dong and J Yang and H Zhang
+  year: '2025'
+  venue: NOMS 2025
 - key: rtfuzz2025
   title: RTFuzz - Fuzzing Browsers via Efficient Render Tree Mutation
   authors: Y Zeng and Y Wu and X Lu and C Zhang
