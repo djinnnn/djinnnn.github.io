@@ -33,7 +33,7 @@ Please feel free to contact me if you are interested in relevant research or wou
 {% for p in site.data.publications %}
   <div class="publication-item">
     <div class="publication-header">
-      <div class="publication-title">{{ p.title }}</div>
+      <div class="publication-title">{% if p.url %}<a href="{{ p.url }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</div>
       <div class="publication-meta-tag">
         {% if p.venue %}{{ p.venue }}{% endif %}
         {% if p.year %}<span class="publication-year">{{ p.year }}</span>{% endif %}
@@ -77,4 +77,4 @@ Please add a `publications.bib` and run the conversion script to populate public
 
 ---
 
-如果你希望我用中文或英文排版、自动导入 Google Scholar / ORCID / BibTeX，告诉我具体偏好，我可以继续完善。 
+如果你希望我用中文或英文排版、自动导入 Google Scholar / ORCID / BibTeX，告诉我具体偏好，我可以继续完善。
