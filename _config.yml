@@ -8,7 +8,7 @@
 # Site Settings
 title                    : "Yue Wu"
 url                      : "https://djinnnn.github.io"
-description              : "Yue Wu is a Ph.D. student at Tsinghua University researching system and network security."
+description              : "Yue Wu is a Ph.D. candidate at Tsinghua University researching system and network security."
 lang                     : "en"
 repository               : "djinnnn/djinnnn.github.io"
 #google_scholar_stats_use_cdn : true
@@ -25,11 +25,11 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 author:
   name             : "Yue Wu (吴越)"
   avatar           : "images/profile.jpg"
-  bio              : "Ph.D. Student at Tsinghua University"
+  bio              : "Ph.D. Candidate at Tsinghua University"
   location         : "Beijing"
   employer         :
   pubmed           : 
-  googlescholar    : # "https://scholar.google.com/citations?user=YOUR_GOOGLE_SCHOLAR_ID"
+  googlescholar    : "https://scholar.google.com/citations?user=9u00DtkAAAAJ&hl=en"
   email            : "wuyue23@mails.tsinghua.edu.cn"
   researchgate     :  # e.g., "https://www.researchgate.net/profile/yourprofile"
   uri              :
