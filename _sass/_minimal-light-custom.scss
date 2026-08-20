@@ -3,13 +3,13 @@
 :root {
   --background: #ffffff;
   --surface: #f7f8fa;
-  --text: #3f4650;
-  --heading: #16263a;
-  --muted: #747b85;
-  --accent: #245f8f;
-  --accent-hover: #153f63;
+  --text: #595959;
+  --heading: #043361;
+  --muted: #6f747a;
+  --accent: #3399cc;
+  --accent-hover: #006699;
   --border: #e7e9ec;
-  --content-width: 980px;
+  --content-width: 960px;
 }
 
 * {
@@ -26,7 +26,7 @@ body {
   color: var(--text);
   font-family: Georgia, "Times New Roman", "Noto Serif CJK SC", "Songti SC", serif;
   font-size: 16px;
-  line-height: 1.65;
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -61,8 +61,8 @@ a:focus-visible {
   width: min(calc(100% - 3rem), var(--content-width));
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 220px minmax(0, 1fr);
-  gap: 72px;
+  grid-template-columns: 232px minmax(0, 650px);
+  gap: 78px;
   align-items: start;
 }
 
@@ -76,9 +76,9 @@ a:focus-visible {
 
 .profile__avatar {
   display: block;
-  width: 132px;
-  height: 132px;
-  margin: 0 auto 1.25rem;
+  width: 108px;
+  height: 108px;
+  margin: 0 auto 1.15rem;
   border-radius: 50%;
   overflow: hidden;
   background: var(--surface);
@@ -108,20 +108,22 @@ a:focus-visible {
 }
 
 .profile__bio,
-.profile__location {
+.profile__location,
+.profile__email {
   margin: 0.2rem 0;
-  color: var(--muted);
-  font-size: 0.94rem;
+  color: var(--text);
+  font-size: 0.9rem;
   line-height: 1.45;
 }
 
-.profile__nav {
-  margin-top: 1.35rem;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.35rem 0.9rem;
-  font-size: 0.92rem;
+.profile__email {
+  margin-top: 0.35rem;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 0.76rem;
+}
+
+.profile__email a {
+  color: var(--text);
 }
 
 .content {
@@ -145,9 +147,7 @@ a:focus-visible {
 
 .content h2 {
   margin: 2.5rem 0 1rem;
-  padding-bottom: 0.45rem;
-  border-bottom: 1px solid var(--border);
-  font-size: 1.42rem;
+  font-size: 1.48rem;
   font-weight: 600;
 }
 
@@ -177,43 +177,96 @@ a:focus-visible {
 }
 
 .publications {
-  margin-top: 0.4rem;
+  margin-top: 0.25rem;
 }
 
 .publication-item {
   display: grid;
-  grid-template-columns: 54px minmax(0, 1fr);
-  gap: 18px;
-  padding: 1.25rem 0;
-  border-bottom: 1px solid var(--border);
+  grid-template-columns: 205px minmax(0, 1fr);
+  gap: 24px;
+  align-items: center;
+  padding: 1rem 0 1.45rem;
 }
 
 .publication-item:first-child {
-  padding-top: 0.3rem;
+  padding-top: 0.2rem;
 }
 
-.publication-year {
-  color: var(--muted);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 0.82rem;
-  letter-spacing: 0.03em;
-  padding-top: 0.18rem;
+.publication-thumbnail {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 1.58 / 1;
+  overflow: hidden;
+  border: 1px solid #d8dce1;
+  border-radius: 0.28rem;
+  background:
+    radial-gradient(circle at 24% 34%, rgba(51, 153, 204, 0.18) 0 4px, transparent 5px),
+    radial-gradient(circle at 73% 66%, rgba(4, 51, 97, 0.14) 0 5px, transparent 6px),
+    linear-gradient(145deg, #fbfcfd 0%, #eef3f7 100%);
+  box-shadow: 0 2px 8px rgba(21, 43, 64, 0.18);
+  text-decoration: none;
+}
+
+.publication-thumbnail:hover,
+.publication-thumbnail:focus-visible {
+  text-decoration: none;
+  box-shadow: 0 3px 12px rgba(21, 43, 64, 0.24);
+}
+
+.publication-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.publication-thumbnail__mark {
+  width: 58%;
+  height: 42%;
+  opacity: 0.55;
+  background:
+    linear-gradient(var(--accent), var(--accent)) 0 15% / 80% 2px no-repeat,
+    linear-gradient(var(--heading), var(--heading)) 0 50% / 100% 2px no-repeat,
+    linear-gradient(var(--accent), var(--accent)) 0 85% / 62% 2px no-repeat;
+}
+
+.publication-badge {
+  position: absolute;
+  top: 0.35rem;
+  left: 0;
+  min-width: 4.7rem;
+  max-width: calc(100% - 0.7rem);
+  padding: 0.12rem 0.55rem;
+  overflow: hidden;
+  background: #0a3d78;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.66rem;
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .publication-title {
-  margin: 0 0 0.35rem !important;
-  font-size: 1.06rem !important;
+  margin: 0 0 0.3rem !important;
+  font-size: 1rem !important;
+  line-height: 1.45 !important;
 }
 
 .publication-title a {
-  color: var(--heading);
+  color: var(--accent);
 }
 
 .publication-authors,
 .publication-venue {
   margin: 0.2rem 0 !important;
-  font-size: 0.94rem;
-  line-height: 1.5;
+  font-size: 0.88rem;
+  line-height: 1.52;
 }
 
 .publication-venue {
@@ -221,11 +274,24 @@ a:focus-visible {
   font-style: italic;
 }
 
-.publication-link {
+.publication-actions {
+  margin-top: 0.32rem;
+}
+
+.publication-actions a {
   display: inline-block;
-  margin-top: 0.35rem;
-  font-size: 0.9rem;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  padding: 0.08rem 0.48rem;
+  border: 1px solid currentColor;
+  color: var(--heading);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.7rem;
+  line-height: 1.25;
+}
+
+.publication-actions a:hover,
+.publication-actions a:focus-visible {
+  color: var(--accent-hover);
+  text-decoration: none;
 }
 
 pre {
@@ -245,14 +311,8 @@ code {
 
 .site-footer {
   margin-top: 3.5rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--border);
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
   color: var(--muted);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.68rem;
 }
 
 @media (max-width: 760px) {
@@ -287,14 +347,8 @@ code {
     font-size: 1.38rem;
   }
 
-  .profile__location {
-    display: none;
-  }
-
-  .profile__nav {
-    grid-column: 2;
-    justify-content: flex-start;
-    margin-top: 0.55rem;
+  .profile__email {
+    font-size: 0.72rem;
   }
 
   .content {
@@ -313,20 +367,17 @@ code {
 
   .publication-item {
     grid-template-columns: 1fr;
-    gap: 0.25rem;
+    gap: 1rem;
   }
 
-  .publication-year {
-    padding-top: 0;
+  .publication-thumbnail {
+    width: min(100%, 320px);
   }
 
   .site-footer {
     display: block;
   }
 
-  .site-footer span {
-    display: block;
-  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -353,7 +404,6 @@ code {
     width: 100%;
   }
 
-  .profile__nav,
   .site-footer {
     display: none;
   }

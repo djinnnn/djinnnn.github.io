@@ -20,14 +20,8 @@
           {% endif %}
           {% if site.author.bio %}<p class="profile__bio">{{ site.author.bio }}</p>{% endif %}
           {% if site.author.location %}<p class="profile__location">{{ site.author.location }}</p>{% endif %}
+          {% if site.author.email %}<p class="profile__email"><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></p>{% endif %}
         </div>
-
-        <nav class="profile__nav" aria-label="Primary navigation">
-          <a href="{{ '/' | relative_url }}#about">About</a>
-          <a href="{{ '/' | relative_url }}#publications">Publications</a>
-          {% if site.author.googlescholar %}<a href="{{ site.author.googlescholar }}" rel="noopener">Google Scholar</a>{% endif %}
-          {% if site.author.email %}<a href="mailto:{{ site.author.email }}">Email</a>{% endif %}
-        </nav>
       </aside>
 
       <main id="content" class="content">
@@ -37,8 +31,7 @@
         </article>
 
         <footer class="site-footer">
-          <span>© {{ 'now' | date: '%Y' }} Yue Wu.</span>
-          <span>Inspired by <a href="https://github.com/yaoyao-liu/minimal-light">Minimal Light</a>.</span>
+          Powered by Jekyll and <a href="https://github.com/yaoyao-liu/minimal-light">Minimal Light</a> theme.
         </footer>
       </main>
     </div>

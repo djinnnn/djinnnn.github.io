@@ -26,7 +26,14 @@ Please feel free to contact me if you are interested in relevant research or wou
 <div class="publications">
 {% for p in site.data.publications %}
   <article class="publication-item">
-    <div class="publication-year">{{ p.year }}</div>
+    {% if p.url %}<a class="publication-thumbnail" href="{{ p.url }}"{% if p.url contains '://' %} rel="noopener"{% endif %} aria-label="Open {{ p.title }}">{% else %}<div class="publication-thumbnail">{% endif %}
+      {% if p.image %}
+        <img src="{{ p.image | relative_url }}" alt="Preview for {{ p.title }}">
+      {% else %}
+        <span class="publication-thumbnail__mark" aria-hidden="true"></span>
+      {% endif %}
+      {% if p.venue_short %}<span class="publication-badge">{{ p.venue_short }}</span>{% endif %}
+    {% if p.url %}</a>{% else %}</div>{% endif %}
     <div class="publication-body">
       <h3 class="publication-title">
         {% if p.url %}
@@ -43,7 +50,11 @@ Please feel free to contact me if you are interested in relevant research or wou
         {% endfor %}
       </p>
       <p class="publication-venue">{{ p.venue }}{% if p.year %}, {{ p.year }}{% endif %}</p>
-      {% if p.url %}<a class="publication-link" href="{{ p.url }}"{% if p.url contains '://' %} rel="noopener"{% endif %}>Paper details <span aria-hidden="true">→</span></a>{% endif %}
+      {% if p.url %}
+        <div class="publication-actions">
+          <a href="{{ p.url }}"{% if p.url contains '://' %} rel="noopener"{% endif %}>{{ p.link_label | default: 'Paper' }}</a>
+        </div>
+      {% endif %}
     </div>
   </article>
 {% endfor %}
@@ -51,7 +62,3 @@ Please feel free to contact me if you are interested in relevant research or wou
 {% else %}
 <p>Publication information will be added soon.</p>
 {% endif %}
-
-## Contact
-
-Email: [{{ site.author.email }}](mailto:{{ site.author.email }})
