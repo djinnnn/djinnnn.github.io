@@ -1,5 +1,6 @@
 - key: typenfuzz2026
   venue_short: TOSEM
+  image: images/publications/typenfuzz.png
   title: 'TypeNFuzz: Dynamic Type-aware Object Dependence Graph-Guided Fuzzing for JavaScript Library Bug Discovery'
   authors: Yishun Zeng and Yue Wu and Chao Zhang
   year: '2026'
@@ -7,6 +8,7 @@
   url: https://doi.org/10.1145/3765760
 - key: f2d2026
   venue_short: Cybersecurity
+  image: images/publications/f2d.png
   title: 'F2D: Detection of resolver DNS hijacking based on filtration funnel strategy'
   authors: Cong Dong and Haoran Jiao and Jiahai Yang and Yue Wu and Chenglong Li and Xia Yin
   year: '2026'
@@ -14,6 +16,7 @@
   url: https://doi.org/10.1186/s42400-026-00581-8
 - key: rtfuzz2026
   venue_short: C&S
+  image: images/publications/rtfuzz.png
   title: RTFuzz - Fuzzing Browsers via Efficient Render Tree Mutation
   authors: Y Zeng and Y Wu and X Lu and C Zhang
   year: '2026'
