@@ -1,33 +1,47 @@
----
-layout: compress
----
-
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="{{ site.lang | default: 'en' }}">
   <head>
     {% include head.html %}
-    {% include head/custom.html %}
   </head>
-
   <body>
+    <a class="skip-link" href="#content">Skip to content</a>
 
-    {% include browser-upgrade.html %}
-    {% include masthead.html %}
+    <div class="wrapper">
+      <aside class="profile" aria-label="Profile">
+        <a class="profile__avatar" href="{{ '/' | relative_url }}" aria-label="Go to homepage">
+          <img src="{{ site.author.avatar | relative_url }}" alt="Portrait of {{ site.author.name }}">
+        </a>
 
-    <div id="main" role="main">
-      {% include sidebar.html %}
-    
-      <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
-        {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
-        <div class="page__inner-wrap">
-          <section class="page__content" itemprop="text">
-            {{ content }}
-          </section>
+        <div class="profile__identity">
+          {% if page.url == '/' %}
+            <h1 class="profile__name"><a href="{{ '/' | relative_url }}">{{ site.author.name }}</a></h1>
+          {% else %}
+            <p class="profile__name"><a href="{{ '/' | relative_url }}">{{ site.author.name }}</a></p>
+          {% endif %}
+          {% if site.author.bio %}<p class="profile__bio">{{ site.author.bio }}</p>{% endif %}
+          {% if site.author.location %}<p class="profile__location">{{ site.author.location }}</p>{% endif %}
         </div>
-      </article>
+
+        <nav class="profile__nav" aria-label="Primary navigation">
+          <a href="{{ '/' | relative_url }}#about">About</a>
+          <a href="{{ '/' | relative_url }}#publications">Publications</a>
+          {% if site.author.email %}<a href="mailto:{{ site.author.email }}">Email</a>{% endif %}
+        </nav>
+      </aside>
+
+      <main id="content" class="content">
+        <article itemscope itemtype="https://schema.org/CreativeWork">
+          {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+          {{ content }}
+        </article>
+
+        <footer class="site-footer">
+          <span>© {{ 'now' | date: '%Y' }} Yue Wu.</span>
+          <span>Inspired by <a href="https://github.com/yaoyao-liu/minimal-light">Minimal Light</a>.</span>
+        </footer>
+      </main>
     </div>
 
-    {% include scripts.html %}
-
+    {% include analytics.html %}
   </body>
 </html>

@@ -8,7 +8,9 @@
 # Site Settings
 title                    : "Yue Wu"
 url                      : "https://djinnnn.github.io"
-#repository               : "RayeRen/acad-homepage.github.io"
+description              : "Yue Wu is a Ph.D. student at Tsinghua University researching system and network security."
+lang                     : "en"
+repository               : "djinnnn/djinnnn.github.io"
 #google_scholar_stats_use_cdn : true
 
 # google analytics
@@ -23,7 +25,7 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 author:
   name             : "Yue Wu (吴越)"
   avatar           : "images/profile.jpg"
-  bio              : "Ph.D Student, Tsinghua University"
+  bio              : "Ph.D. Student at Tsinghua University"
   location         : "Beijing"
   employer         :
   pubmed           : 
