@@ -5,6 +5,8 @@
 {% endfor %}
 <meta name="citation_publication_date" content="{{ page.citation.publication_date }}">
 <meta name="citation_journal_title" content="{{ page.citation.journal_title | escape_once }}">
+{% if page.citation.issn %}<meta name="citation_issn" content="{{ page.citation.issn }}">{% endif %}
+{% if page.citation.publisher %}<meta name="citation_publisher" content="{{ page.citation.publisher | escape_once }}">{% endif %}
 <meta name="citation_volume" content="{{ page.citation.volume }}">
 <meta name="citation_issue" content="{{ page.citation.issue }}">
 <meta name="citation_firstpage" content="{{ page.citation.firstpage }}">
