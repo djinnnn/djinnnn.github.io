@@ -82,13 +82,9 @@ a:focus-visible {
   border-radius: 50%;
   overflow: hidden;
   background: var(--surface);
-}
-
-.profile__avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 30%;
+  background-position: center 30%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .profile__name {
@@ -340,9 +336,6 @@ code {
     --border: #2a313c;
   }
 
-  img {
-    opacity: 0.92;
-  }
 }
 
 @media print {
