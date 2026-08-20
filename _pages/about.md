@@ -28,7 +28,7 @@ Please feel free to contact me if you are interested in relevant research or wou
   <article class="publication-item">
     {% if p.url %}<a class="publication-thumbnail" href="{{ p.url }}"{% if p.url contains '://' %} rel="noopener"{% endif %} aria-label="Open {{ p.title }}">{% else %}<div class="publication-thumbnail">{% endif %}
       {% if p.image %}
-        <img src="{{ p.image | relative_url }}" alt="Preview for {{ p.title }}">
+        <img src="{{ p.image | relative_url }}" alt="Preview for {{ p.title }}" loading="lazy" decoding="async">
       {% else %}
         <span class="publication-thumbnail__mark" aria-hidden="true"></span>
       {% endif %}

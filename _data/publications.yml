@@ -31,6 +31,7 @@
   venue: IEEE/IFIP Network Operations and Management Symposium (NOMS)
 - key: wu2024knowledge
   venue_short: Computer Science
+  image: images/publications/knowledge-graph-cyberspace.png
   title: Knowledge Graph Based Approach to Cyberspace Geographic Mapping Construction
   authors: WU Yue and HU Wei and LI Chenglong and YANG Jiahai and LI Zhiqi and YIN Qin and XIA Ang and DANG Fangfang
   year: '2024'
