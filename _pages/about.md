@@ -20,13 +20,6 @@ Please feel free to contact me if you are interested in relevant research or wou
 - **System and Network Security** — automated vulnerability discovery and large-scale security measurement
 - **LLM4Sec** — applying large language models to security analysis and automation
 
-## Selected Honors and Awards
-
-- **Friends of Tsinghua – QI-ANXIN Scholarship**, Institute for Network Sciences and Cyberspace, Tsinghua University, Dec. 2025
-- **Zhongguancun Scholarship**, Sep. 2025 — sponsored by Zhongguancun Laboratory
-- **National Encouragement Scholarship** and **First-Class University Scholarship**, University of Electronic Science and Technology of China — awarded for three consecutive years
-- **Outstanding Graduate**, University of Electronic Science and Technology of China
-
 ## Publications {#publications}
 
 {% if site.data.publications and site.data.publications.size > 0 %}
@@ -69,3 +62,10 @@ Please feel free to contact me if you are interested in relevant research or wou
 {% else %}
 <p>Publication information will be added soon.</p>
 {% endif %}
+
+## Selected Honors and Awards
+
+- **Friends of Tsinghua – QI-ANXIN Scholarship** — Institute for Network Sciences and Cyberspace, Tsinghua University; Dec. 2025.
+- **Zhongguancun Scholarship** — sponsored by Zhongguancun Laboratory; Sep. 2025.
+- **National Encouragement Scholarship and First-Class University Scholarship** — University of Electronic Science and Technology of China; awarded for three consecutive years.
+- **Outstanding Graduate** — University of Electronic Science and Technology of China.
