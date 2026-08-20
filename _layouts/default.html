@@ -8,7 +8,9 @@
 
     <div class="wrapper">
       <aside class="profile" aria-label="Profile">
-        <a class="profile__avatar" href="{{ '/' | relative_url }}" aria-label="Portrait of {{ site.author.name }}; go to homepage" style="background-image: url('{{ site.author.avatar | relative_url }}')"></a>
+        <a class="profile__avatar" href="{{ '/' | relative_url }}" aria-label="Go to homepage">
+          <img src="{{ site.author.avatar | relative_url }}" alt="Portrait of {{ site.author.name }}">
+        </a>
 
         <div class="profile__identity">
           {% if page.url == '/' %}

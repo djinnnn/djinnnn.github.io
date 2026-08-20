@@ -76,15 +76,17 @@ a:focus-visible {
 
 .profile__avatar {
   display: block;
-  width: 132px;
-  height: 132px;
+  width: 120px;
   margin: 0 auto 1.25rem;
-  border-radius: 50%;
+  border-radius: 0.5rem;
   overflow: hidden;
   background: var(--surface);
-  background-position: center 30%;
-  background-repeat: no-repeat;
-  background-size: cover;
+}
+
+.profile__avatar img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .profile__name {
@@ -269,8 +271,7 @@ code {
 
   .profile__avatar {
     grid-row: 1 / span 2;
-    width: 88px;
-    height: 88px;
+    width: 76px;
     margin: 0;
   }
 
